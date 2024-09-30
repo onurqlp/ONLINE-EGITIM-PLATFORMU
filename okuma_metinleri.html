@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almanca Okuma Metinleri - AYDA</title>
+    <style>
+        /* Genel Sayfa Stili */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1C3F94; /* AYDA mavi arka plan */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #2C5282; /* Koyu mavi başlık */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Butonlar Konteyneri */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px auto;
+        }
+
+        /* Buton Stili */
+        .level-button {
+            padding: 15px;
+            font-size: 1.1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            width: 150px;
+        }
+
+        .level-button:hover {
+            background-color: #45a049;
+        }
+
+        /* İframe Alanı */
+        iframe {
+            width: 90%;
+            height: 600px;
+            border: none;
+            margin: 20px auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* Sabit Geri Dönüş Butonları */
+        .fixed-buttons {
+            position: fixed;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .fixed-buttons a {
+            padding: 12px 25px;
+            font-size: 1rem;
+            background-color: #2C5282;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .fixed-buttons a:hover {
+            background-color: #144682;
+        }
+
+        /* Altbilgi */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #2C5282;
+            color: white;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+    </style>
+    <script>
+        // Butona tıklanınca iframe içeriğini değiştiren fonksiyon
+        function loadLevelContent(level) {
+            var iframe = document.getElementById('contentIframe');
+            if (level === 'A1') {
+                iframe.src = 'https://www.deutschakademie.de/online-deutschkurse/a1-lesen-lernen/';
+            } else if (level === 'A2') {
+                iframe.src = 'https://www.deutschakademie.de/online-deutschkurse/a2-lesen-lernen/';
+            } else if (level === 'B1') {
+                iframe.src = 'https://www.deutschakademie.de/online-deutschkurse/b1-lesen-lernen/';
+            } else if (level === 'B2') {
+                iframe.src = 'https://www.deutschakademie.de/online-deutschkurse/b2-lesen-lernen/';
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Almanca Okuma Metinleri</h1>
+        <p>A1, A2, B1 ve B2 seviyelerinde Almanca okuma metinleri</p>
+    </header>
+
+    <!-- Butonlar -->
+    <div class="button-container">
+        <button class="level-button" onclick="loadLevelContent('A1')">A1 Seviye</button>
+        <button class="level-button" onclick="loadLevelContent('A2')">A2 Seviye</button>
+        <button class="level-button" onclick="loadLevelContent('B1')">B1 Seviye</button>
+        <button class="level-button" onclick="loadLevelContent('B2')">B2 Seviye</button>
+    </div>
+
+    <!-- İframe ile İçerik Gösterimi -->
+    <iframe id="contentIframe" src="https://www.deutschakademie.de/online-deutschkurse/a1-lesen-lernen/" title="Okuma Metinleri"></iframe>
+
+    <!-- Sabit Geri Dönüş Butonları -->
+    <div class="fixed-buttons">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="javascript:history.back()">Önceki Sayfa</a>
+    </div>
+
+    <footer>
+        <p>© 2024 AYDA Ankara Yabancı Dil Akademisi. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+</body>
+</html>
