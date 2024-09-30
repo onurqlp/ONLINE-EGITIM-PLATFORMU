@@ -4,6 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ders Materyalleri</title>
+    <style>
+        /* Genel Sayfa Stili */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1C3F94; /* Ana sayfa koyu mavi arka plan */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+
+        /* Başlık ve Alt Başlık */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #2C5282; /* Daha koyu başlık alanı */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Şifre Giriş Ekranı */
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-container input {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .login-container button {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .login-container button:hover {
+            background-color: #45a049;
+        }
+
+        /* İçerik Bölümü */
+        section {
+            text-align: center;
+            margin: 20px;
+            display: none; /* İlk başta gizli */
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* İframe (Google Drive) */
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 0;
+            border-radius: 8px; /* Köşeleri yuvarlatma */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+        }
+
+        /* Altbilgi */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #2C5282;
+            color: white;
+            font-size: 1rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Duyarlı Tasarım (Mobil Uyum) */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 1.2rem;
+            }
+
+            iframe {
+                height: 400px;
+            }
+
+            footer {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            section h2 {
+                font-size: 1rem;
+            }
+
+            iframe {
+                height: 350px;
+            }
+
+            footer {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+    <script>
+        function validateLogin() {
+            // Kullanıcıdan grup adı ve şifre al
+            var groupName = document.getElementById("groupName").value;
+            var password = document.getElementById("password").value;
+
+            // Şu an ne girilirse girilsin kabul edecek
+            if (groupName !== "" && password !== "") {
+                document.querySelector(".login-container").style.display = "none"; // Giriş alanını gizle
+                document.querySelector("section").style.display = "block"; // Ders materyallerini göster
+            } else {
+                alert("Lütfen geçerli bir grup adı ve şifre girin.");
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -12,11 +173,20 @@
         <p>Bu sayfadan ders materyallerine ulaşabilirsiniz.</p>
     </header>
 
+    <!-- Şifre Giriş Bölümü -->
+    <div class="login-container">
+        <h2>WhatsApp Grubu ve Şifre Girişi</h2>
+        <input type="text" id="groupName" placeholder="WhatsApp Grup Adı" required>
+        <input type="password" id="password" placeholder="Şifre" required>
+        <button onclick="validateLogin()">Giriş Yap</button>
+    </div>
+
+    <!-- İçerik Bölümü (Başlangıçta gizli, giriş yapılınca açılacak) -->
     <section>
         <h2>Ders Materyalleri Google Drive'da</h2>
 
         <!-- Google Drive içeriğini iframe ile gösterme -->
-        <iframe src="https://drive.google.com/embeddedfolderview?id=17jZLiBdgTxooNI5KutxFJgOhkA_XlCLV#list" style="width:100%; height:600px; border:0;"></iframe>
+        <iframe src="https://drive.google.com/embeddedfolderview?id=17jZLiBdgTxooNI5KutxFJgOhkA_XlCLV#list"></iframe>
     </section>
 
     <footer>
