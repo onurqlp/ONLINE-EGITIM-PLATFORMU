@@ -4,6 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dijital Kütüphane</title>
+    <style>
+        /* Genel Sayfa Stili */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1C3F94; /* Ayda mavi arka plan */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+
+        /* Başlık ve Alt Başlık */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #2C5282; /* Koyu mavi başlık */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* İçerik Bölümü */
+        section {
+            text-align: center;
+            margin: 20px;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* İframe (Google Drive) */
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 0;
+            border-radius: 8px; /* Köşeleri yuvarlatma */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+        }
+
+        /* Altbilgi */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #2C5282;
+            color: white;
+            font-size: 1rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Mobil Uyumlu Tasarım */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 1.2rem;
+            }
+
+            iframe {
+                height: 400px;
+            }
+
+            footer {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header p {
+                font-size: 0.9rem;
+            }
+
+            section h2 {
+                font-size: 1rem;
+            }
+
+            iframe {
+                height: 350px;
+            }
+
+            footer {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -16,7 +126,7 @@
         <h2>Dijital Kütüphane Google Drive'da</h2>
 
         <!-- Google Drive içeriğini iframe ile gösterme -->
-        <iframe src="https://drive.google.com/embeddedfolderview?id=1LU_sdMTD8yrWvbj4QGbY64Jjrh9qb9PD#list" style="width:100%; height:600px; border:0;"></iframe>
+        <iframe src="https://drive.google.com/embeddedfolderview?id=1LU_sdMTD8yrWvbj4QGbY64Jjrh9qb9PD#list"></iframe>
     </section>
 
     <footer>
