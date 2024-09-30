@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYDA Ankara Yabancı Dil Akademisi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1C3F94; /* Daha koyu mavi */
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #2C5282; /* Koyu mavi */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #144682;
+        }
+
+        .dictionary-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .dictionary-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .dictionary-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .dictionary-container a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            padding: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .dictionary-container a:hover {
+            color: #a8d0e6;
+        }
+
+        .social-icons {
+            position: fixed;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+
+        .social-icons img {
+            width: 25px;
+        }
+
+        footer {
+            background-color: #2C5282;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>AYDA Ankara Yabancı Dil Akademisi</h1>
+        <p>Online Eğitim Platformumuza Hoşgeldiniz!</p>
+        <img src="mavi_kitap_logo.png" alt="Site Logosu" class="logo"> <!-- Mavi kitap logosu -->
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="ders_materyalleri.html">Ders Materyalleri</a></li>
+            <li><a href="dijital_kutuphane.html">Dijital Kütüphane</a></li>
+            <li><a href="kur_gecis_sinavlari.html">Kur Geçiş Sınavları</a></li>
+            <li><a href="ogretmen_portali.html">Öğretmen Portalı</a></li>
+            <li><a href="seviyebelirleme.html">SEVİYE BELİRLEME</a></li>
+            <li><a href="sinav_hazirlik_materyalleri.html">Sınav Hazırlık Materyalleri</a></li>
+            <li><a href="almanca_etkinlikler.html">Almanca Etkinlikler</a></li>
+        </ul>
+    </nav>
+
+    <div class="dictionary-section">
+        <h2>Sözlükler</h2>
+        <div class="dictionary-container">
+            <a href="https://www.duden.de" target="_blank">Duden</a>
+            <a href="https://www.langenscheidt.com" target="_blank">Langenscheidt</a>
+            <a href="https://tr.pons.com" target="_blank">PONS</a>
+        </div>
+    </div>
+
+    <!-- Sosyal medya ikonları -->
+    <div class="social-icons">
+        <a href="https://wa.me/1234567890" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+        <a href="https://www.instagram.com/yourprofile" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        </a>
+        <a href="https://www.yourwebsite.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Globe_icon.svg" alt="Website">
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 AYDA Ankara Yabancı Dil Akademisi. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+</body>
+</html>
