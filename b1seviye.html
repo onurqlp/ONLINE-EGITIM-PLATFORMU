@@ -19,7 +19,7 @@
 
         header {
             padding: 10px;
-            background-color: #1877F2; /* Üst şerit mavi */
+            background-color: #1877F2;
             text-align: center;
             color: white;
         }
@@ -200,14 +200,12 @@
         <p>E-posta: info@aydaakademi.com</p>
     </header>
 
-    <!-- Yeni Başlık ve Açıklama -->
     <div class="container">
         <h2>Almanca B1 Seviye Belirleme Sınavı</h2>
         <p>Bu sınav yaklaşık 50 dakika sürecektir ve Almanca dil seviyenizi belirlemek için tasarlanmıştır.</p>
         <p>Sınav sonunda seviyenize göre uygun kurslar önerilecektir.</p>
     </div>
 
-    <!-- Bilgi Formu -->
     <div class="container" id="form-container">
         <h2>Teste Başlamak için Bilgilerinizi Girin</h2>
         <form id="userForm">
@@ -218,7 +216,6 @@
             <label for="email">E-posta:</label>
             <input type="email" id="email" name="email" required><br><br>
 
-            <!-- Opsiyonel WhatsApp Grup adı alanı -->
             <label for="whatsapp">Katıldığınız kursun WhatsApp Grup adı (Opsiyonel):</label>
             <input type="text" id="whatsapp" name="whatsapp"><br><br>
 
@@ -227,11 +224,9 @@
         <div id="form-submitted-message" class="hidden"> Test başlıyor.</div>
     </div>
 
-    <!-- Test ve Form -->
     <div class="container hidden" id="test-container">
         <iframe id="testIframe" src="https://www.cornelsen.de/sites/einstufungstest/EINSTUFUNGSTEST_DAF_B1_87505/index.html"></iframe>
 
-        <!-- Geri Sayım -->
         <div id="timer">50:00</div>
 
         <div id="instruction" class="hidden">
@@ -258,7 +253,6 @@
         </div>
     </div>
 
-    <!-- Sabit Geri Dönüş Butonları (Ayda Hızlandırması) -->
     <div class="fixed-buttons">
         <a href="index.html">Ana Sayfa</a>
         <a href="javascript:history.back()">Önceki Sayfa</a>
@@ -270,7 +264,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
         const userForm = document.getElementById('userForm');
         const formContainer = document.getElementById('form-container');
@@ -299,51 +292,39 @@
         }
 
         function startCountdown(duration) {
-            let timeRemaining = duration; // 50 dakika = 3000 saniye
+            let timeRemaining = duration;
             countdown = setInterval(function () {
                 let minutes = Math.floor(timeRemaining / 60);
                 let seconds = timeRemaining % 60;
-
                 seconds = seconds < 10 ? '0' + seconds : seconds;
-
                 timerElement.textContent = `${minutes}:${seconds}`;
-
                 if (timeRemaining <= 0) {
                     clearInterval(countdown);
                     showThanksMessage();
                 }
-
                 timeRemaining--;
             }, 1000);
         }
 
         userForm.addEventListener('submit', function(event) {
             event.preventDefault();
-
             const phoneNumber = phoneInput.value.replace(/\D/g, '');
             const randomId = generatePersonalId();
             const fullId = `${phoneNumber}_${randomId}`;
             personalIdInput.value = fullId;
-
             formNameInput.value = document.getElementById('name').value;
-
             formSubmittedMessage.classList.remove('hidden');
-
             if (whatsappInput.value.trim() === "") {
                 alertMessage.classList.remove('hidden');
             }
-
             setTimeout(function() {
                 formContainer.classList.add('hidden');
                 testContainer.classList.remove('hidden');
                 instruction.classList.remove('hidden');
-
                 header.classList.add('small');
                 header.innerHTML = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH9d9Ib6rbgzHkNztQ4lQaEqKkxcpNW7yZfA&s" alt="Kitap Simgesi">' + 
                     '<p>AYDA Ankara Yabancı Dil Akademisi | Telefon: +90 (312) 123 45 67 | E-posta: info@aydaakademi.com</p>';
-
                 startCountdown(50 * 60);
-
                 showResultSection();
             }, 2000);
         });
