@@ -105,4 +105,48 @@
             }
         }
 
-       
+        @media (max-width: 480px) {
+            .login-container h1 {
+                font-size: 1.5rem;
+            }
+
+            .login-container input, .login-container button {
+                font-size: 0.9rem;
+            }
+
+            .fixed-buttons a {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+
+            .fixed-buttons {
+                right: 5px; /* Mobilde butonlar biraz daha içeri alınır */
+            }
+        }
+    </style>
+    <script>
+        function login() {
+            // Şifre ne girilirse girilsin giriş yapacak
+            window.location.href = 'hoca12.html'; // Her durumda giriş yap
+        }
+    </script>
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>Öğretmen Portalı Giriş</h1>
+        <input type="text" id="username" placeholder="Kullanıcı Adı" required>
+        <input type="password" id="password" placeholder="Şifre" required>
+        <button onclick="login()">Giriş Yap</button>
+    </div>
+
+    <!-- Sabit Geri Dönüş Butonları (Ayda Hızlandırması) -->
+    <div class="fixed-buttons">
+    <a href="index.html" class="navigation-button">Ana Sayfa</a>
+    <a href="javascript:history.back()" class="navigation-button">Önceki Sayfa</a>
+</div>
+
+
+
+</body>
+</html>
