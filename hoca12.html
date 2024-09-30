@@ -16,6 +16,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            position: relative; /* Dinamik butonların yerleşimi için gerekli */
         }
 
         /* Portal Kutusu Stili */
@@ -60,6 +61,34 @@
             background-color: #45a049;
         }
 
+        /* Sabit Geri Dönüş Butonları (Ayda Hızlandırması) */
+        .fixed-buttons {
+            position: fixed;
+            top: 50%;
+            right: 10px; /* Sağda sabit */
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .fixed-buttons a {
+            padding: 12px 25px;
+            font-size: 1rem;
+            background-color: #2C5282; /* Koyu mavi butonlar */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .fixed-buttons a:hover {
+            background-color: #144682; /* Hover'da daha koyu mavi */
+        }
+
         /* Mobil Uyumlu Tasarım */
         @media (max-width: 768px) {
             .portal-container h1 {
@@ -69,6 +98,11 @@
             .portal-container .button {
                 font-size: 1rem;
                 padding: 12px 25px;
+            }
+
+            .fixed-buttons a {
+                padding: 10px 20px;
+                font-size: 0.9rem;
             }
         }
 
@@ -80,6 +114,15 @@
             .portal-container .button {
                 font-size: 0.9rem;
                 padding: 10px 20px;
+            }
+
+            .fixed-buttons a {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+
+            .fixed-buttons {
+                right: 5px; /* Mobilde butonlar biraz daha içeri alınır */
             }
         }
 
@@ -94,6 +137,12 @@
             <a href="#" class="button">Ödevler</a>
             <a href="#" class="button">Yoklama</a>
         </div>
+    </div>
+
+    <!-- Sabit Geri Dönüş Butonları (Ayda Hızlandırması) -->
+    <div class="fixed-buttons">
+        <a href="anasayfa.html">Ana Sayfa</a>
+        <a href="onceki_sayfa.html">Önceki Sayfa</a>
     </div>
 
 </body>
