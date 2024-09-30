@@ -1,1 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelime Etkinlikleri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1C3F94; /* Ayda mavi arka plan */
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
 
+        header {
+            background-color: #2C5282; /* Koyu mavi başlık */
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        /* Iframe */
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Geri dönüş butonları */
+        .fixed-buttons {
+            position: fixed;
+            top: 50%;
+            right: 10px; 
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .fixed-buttons a {
+            padding: 12px 25px;
+            font-size: 1rem;
+            background-color: #2C5282; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .fixed-buttons a:hover {
+            background-color: #144682;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Kelime Etkinlikleri</h1>
+    </header>
+
+    <p>Kelime bilginizi geliştirebileceğiniz etkinlikler aşağıda listelenmiştir:</p>
+
+    <!-- Google Drive içeriği iframe ile -->
+    <iframe src="https://der-artikel.de/wortschatz.html"></iframe>
+
+    <!-- Geri dönüş butonları -->
+    <div class="fixed-buttons">
+        <a href="etkinlikler.html" class="navigation-button">Etkinliklere Geri Dön</a>
+        <a href="index.html" class="navigation-button">Ana Sayfa</a>
+    </div>
+
+</body>
+</html>
