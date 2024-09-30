@@ -135,6 +135,44 @@
             margin: 0;
         }
 
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3rem; /* Mobilde başlığı küçült */
+            }
+
+            nav ul li a {
+                font-size: 1rem; /* Butonları küçült */
+            }
+
+            .social-icons a {
+                width: 35px; /* İkonları mobilde küçült */
+                height: 35px;
+            }
+
+            .social-icons img {
+                width: 20px; /* İkon boyutunu küçült */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.5rem; /* Daha küçük ekranlar için başlık küçültüldü */
+            }
+
+            nav ul li a {
+                font-size: 0.9rem; /* Butonları biraz daha küçült */
+            }
+
+            .social-icons a {
+                width: 30px;
+                height: 30px;
+            }
+
+            .social-icons img {
+                width: 18px;
+            }
+        }
+
     </style>
 </head>
 <body>
