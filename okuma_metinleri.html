@@ -38,15 +38,15 @@
         .button-container {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 10px;
             flex-wrap: wrap;
             margin: 20px auto;
         }
 
         /* Buton Stili */
         .level-button {
-            padding: 15px;
-            font-size: 1.1rem;
+            padding: 10px 15px;
+            font-size: 1rem;
             background-color: #4CAF50;
             color: white;
             border: none;
@@ -54,7 +54,7 @@
             cursor: pointer;
             text-align: center;
             transition: background-color 0.3s ease;
-            width: 150px;
+            width: 80px;
         }
 
         .level-button:hover {
@@ -115,13 +115,13 @@
         function loadLevelContent(level) {
             var iframe = document.getElementById('contentIframe');
             if (level === 'A1') {
-                iframe.src = 'https://www.deutschakademie.de/online-deutschkurse/a1-lesen-lernen/';
+                iframe.src = 'https://learngerman.dw.com/en/a1-lesen/s-13038';
             } else if (level === 'A2') {
-                iframe.src = 'https://www.deutschakademie.de/online-deutschkurse/a2-lesen-lernen/';
+                iframe.src = 'https://learngerman.dw.com/en/a2-lesen/s-13039';
             } else if (level === 'B1') {
-                iframe.src = 'https://www.deutschakademie.de/online-deutschkurse/b1-lesen-lernen/';
+                iframe.src = 'https://learngerman.dw.com/en/b1-lesen/s-13040';
             } else if (level === 'B2') {
-                iframe.src = 'https://www.deutschakademie.de/online-deutschkurse/b2-lesen-lernen/';
+                iframe.src = 'https://learngerman.dw.com/en/b2-lesen/s-13041';
             }
         }
     </script>
@@ -135,24 +135,26 @@
 
     <!-- Butonlar -->
     <div class="button-container">
-        <button class="level-button" onclick="loadLevelContent('A1')">A1 Seviye</button>
-        <button class="level-button" onclick="loadLevelContent('A2')">A2 Seviye</button>
-        <button class="level-button" onclick="loadLevelContent('B1')">B1 Seviye</button>
-        <button class="level-button" onclick="loadLevelContent('B2')">B2 Seviye</button>
+        <button class="level-button" onclick="loadLevelContent('A1')">A1</button>
+        <button class="level-button" onclick="loadLevelContent('A2')">A2</button>
+        <        <button class="level-button" onclick="loadLevelContent('B1')">B1</button>
+        <button class="level-button" onclick="loadLevelContent('B2')">B2</button>
     </div>
 
-    <!-- İframe ile İçerik Gösterimi -->
-    <iframe id="contentIframe" src="https://www.deutschakademie.de/online-deutschkurse/a1-lesen-lernen/" title="Okuma Metinleri"></iframe>
+    <!-- İçerik Gösterimi için Iframe -->
+    <iframe id="contentIframe" src="" title="Okuma Metinleri"></iframe>
 
-    <!-- Sabit Geri Dönüş Butonları -->
+    <!-- Sabit Geri Dönüş Butonları (Ayda Hızlandırması) -->
     <div class="fixed-buttons">
-        <a href="index.html">Ana Sayfa</a>
-        <a href="javascript:history.back()">Önceki Sayfa</a>
+        <a href="index.html" class="navigation-button">Ana Sayfa</a>
+        <a href="javascript:history.back()" class="navigation-button">Önceki Sayfa</a>
     </div>
 
+    <!-- Altbilgi -->
     <footer>
-        <p>© 2024 AYDA Ankara Yabancı Dil Akademisi. Tüm Hakları Saklıdır.</p>
+        <p>&copy; 2024 AYDA Ankara Yabancı Dil Akademisi. Tüm Hakları Saklıdır.</p>
     </footer>
 
 </body>
 </html>
+
