@@ -55,6 +55,34 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Hafif gölge */
         }
 
+        /* Sabit Geri Dönüş Butonları (Ayda Hızlandırması) */
+        .fixed-buttons {
+            position: fixed;
+            top: 50%;
+            right: 10px; /* Sağda sabit */
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .fixed-buttons a {
+            padding: 12px 25px;
+            font-size: 1rem;
+            background-color: #2C5282; /* Koyu mavi butonlar */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .fixed-buttons a:hover {
+            background-color: #144682; /* Hover'da daha koyu mavi */
+        }
+
         /* Altbilgi */
         footer {
             text-align: center;
@@ -90,6 +118,11 @@
             footer {
                 font-size: 0.9rem;
             }
+
+            .fixed-buttons a {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -112,7 +145,17 @@
             footer {
                 font-size: 0.8rem;
             }
+
+            .fixed-buttons a {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+
+            .fixed-buttons {
+                right: 5px; /* Mobilde butonlar biraz daha içeri alınır */
+            }
         }
+
     </style>
 </head>
 <body>
@@ -128,6 +171,12 @@
         <!-- Google Drive içeriğini iframe ile gösterme -->
         <iframe src="https://drive.google.com/embeddedfolderview?id=1LU_sdMTD8yrWvbj4QGbY64Jjrh9qb9PD#list"></iframe>
     </section>
+
+    <!-- Sabit Geri Dönüş Butonları (Ayda Hızlandırması) -->
+    <div class="fixed-buttons">
+        <a href="anasayfa.html">Ana Sayfa</a>
+        <a href="onceki_sayfa.html">Önceki Sayfa</a>
+    </div>
 
     <footer>
         <p>&copy; 2024. Tüm Hakları Saklıdır.</p>
