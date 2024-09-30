@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYDA Ankara Yabancı Dil Akademisi - Almanca A1 Kuru Geçiş Sınavı</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            box-sizing: border-box;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 10px;
+            background-color: #1877F2; /* Üst şerit mavi */
+            text-align: center;
+            color: white;
+        }
+
+        header h1, header h2, header p {
+            margin: 5px 0;
+        }
+
+        header img {
+            width: 30px;
+            vertical-align: middle;
+        }
+
+        header.small {
+            padding: 5px;
+            font-size: 0.8em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header.small p {
+            margin-left: 10px;
+        }
+
+        .container {
+            max-width: 1400px; /* Daha geniş ekran desteği için genişlik artırıldı */
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        iframe {
+            width: 125%; /* Büyük ekranlar için genişlik artırıldı */
+            height: 787px;
+            margin-left: -4.5cm; /* %5 daha büyük ve sola kaydırıldı */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #instruction {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .personal-id {
+            font-size: 1.2em;
+            margin: 5px 0;
+            background-color: #eee;
+            padding: 8px;
+            border: 1px solid #ddd;
+            display: inline-block;
+        }
+
+        #form-submitted-message {
+            color: green;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        form {
+            margin-bottom: 5px;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"] {
+            margin-right: 10px;
+            padding: 5px;
+            font-size: 1em;
+        }
+
+        #timer {
+            font-size: 1.5em;
+            color: red;
+            margin-top: 5px; /* Boşluklar azaltıldı */
+        }
+
+        footer {
+            padding: 5px;
+            background-color: #1877F2;
+            color: white;
+            font-size: 0.7em;
+            margin-top: 10px;
+        }
+
+        .guide-message {
+            color: red;
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background-color: lightgray;
+            padding: 5px;
+            border-radius: 3px;
+        }
+
+        .alert-message {
+            margin-top: 10px;
+            font-size: 1.1em;
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        /* Sabit Geri Dönüş Butonları (Ayda Hızlandırması) */
+        .fixed-buttons {
+            position: fixed;
+            top: 50%;
+            right: 10px; /* Sağda sabit */
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .fixed-buttons a {
+            padding: 12px 25px;
+            font-size: 1rem;
+            background-color: #2C5282; /* Koyu mavi butonlar */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .fixed-buttons a:hover {
+            background-color: #144682; /* Hover'da daha koyu mavi */
+        }
+
+        /* Medya Sorguları */
+        /* Tabletler için */
+        @media only screen and (max-width: 1024px) {
+            iframe {
+                width: 100%; /* Tablet ekranlarında genişlik %100 */
+                height: 700px; /* Yükseklik ayarlandı */
+                margin-left: 0; /* Sola kaydırma kaldırıldı */
+            }
+
+            .fixed-buttons a {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Telefonlar için */
+        @media only screen and (max-width: 768px) {
+            iframe {
+                width: 100%; /* Telefon ekranlarında genişlik %100 */
+                height: 500px; /* Yükseklik daha da küçültüldü */
+                margin-left: 0; /* Sola kaydırma kaldırıldı */
+            }
+
+            .fixed-buttons a {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+
+            .fixed-buttons {
+                right: 5px; /* Mobilde butonlar biraz daha içeri alınır */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="page-header">
+        <h1>AYDA <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH9d9Ib6rbgzHkNztQ4lQaEqKkxcpNW7yZfA&s" alt="Kitap Simgesi"></h1>
+        <h2>Ankara Yabancı Dil Akademisi</h2>
+        <p>Telefon: +90 (312) 123 45 67</p>
+        <p>E-posta: info@aydaakademi.com</p>
+    </header>
+
+    <!-- Bilgi Formu -->
+    <div class="container" id="form-container">
+        <h2>Teste Başlamak için Bilgilerinizi Girin</h2>
+        <form id="userForm">
+            <label for="name">Ad Soyad:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="phone">Telefon:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+            <label for="email">E-posta:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <!-- Opsiyonel WhatsApp Grup adı alanı -->
+            <label for="whatsapp">Katıldığınız kursun WhatsApp Grup adı (Opsiyonel):</label>
+            <input type="text" id="whatsapp" name="whatsapp"><br><br>
+
+            <button type="submit">Teste Başla</button>
+        </form>
+        <div id="form-submitted-message" class="hidden"> Test başlıyor.</div>
+    </div>
+
+    <!-- Test ve Form -->
+    <div class="container hidden" id="test-container">
+        <iframe id="testIframe" src="https://www.cornelsen.de/sites/einstufungstest/EINSTUFUNGSTEST_DAF_A1_DT_48755/index.html"></iframe>
+
+        <!-- Geri Sayım -->
+        <div id="timer">50:00</div>
+
+        <div id="instruction" class="hidden">
+            Başlamak ve sorular arasında geçiş yapmak için sayfanın köşesindeki yeşil OK tuşunu kullanın.
+        </div>
+
+        <div id="result-section" class="hidden">
+            <form action="https://formspree.io/f/2136kj" method="POST" id="resultForm">
+                <label for="name">Ad Soyad:</label>
+                <input type="text" id="formName" name="name" required>
+
+                <label for="result">Test Sonucu:</label>
+                <input type="text" id="result" name="result" required>
+
+                <label for="personalId">Kişisel ID:</label>
+                <input type="text" id="generatedPersonalId" name="personalId" required readonly>
+
+                <button type="submit">Sonucu Gönder</button>
+            </form>
+        </div>
+
+        <!-- Eğer opsiyonel alan doldurulmadıysa mesaj göster -->
+        <div id="alert-message" class="alert-message hidden">
+            Lütfen adınıza oluşturulmuş bu Kişisel ID'yi bize gönderin ve indirim ile detaylı bilgilendirme alın.
+        </div>
+    </div>
+
+    <!-- Sabit Geri Dönüş Butonları (Ayda Hızlandırması) -->
+    <div class="fixed-buttons">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="javascript:history.back()">Önceki Sayfa</a>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 AYDA Ankara Yabancı Dil Akademisi. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const userForm = document.getElementById('userForm');
+        const formContainer = document.getElementById('form-container');
+        const testContainer = document.getElementById('test-container');
+        const header = document.getElementById('page-header');
+        const instruction = document.getElementById('instruction');
+        const resultSection = document.getElementById('result-section');
+        const formNameInput = document.getElementById('formName');
+        const personalIdInput = document.getElementById('generatedPersonalId');
+        const formSubmittedMessage = document.getElementById('form-submitted-message');
+        const whatsappInput = document.getElementById('whatsapp');
+        const alertMessage = document.getElementById('alert-message');
+        const timerElement = document.getElementById('timer');
+        const phoneInput = document.getElementById('phone');
+
+        let generatedPersonalId = '';
+        let countdown;
+
+        // Rastgele Kişisel ID üretimi
+        function generatePersonalId() {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let id = '';
+            for (let i = 0; i < 5; i++) {
+                id += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return id;
+        }
+
+        // Geri sayım başlatma fonksiyonu
+        function startCountdown(duration) {
+            let timeRemaining = duration; // 50 dakika = 3000 saniye
+            countdown = setInterval(function () {
+                let minutes = Math.floor(timeRemaining / 60);
+                let seconds = timeRemaining % 60;
+
+                // Tek haneli saniyeleri 0 ile doldur
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+
+                // Geri sayım metnini güncelle
+                timerElement.textContent = `${minutes}:${seconds}`;
+
+                // Zaman dolduğunda geri sayımı durdur
+                if (timeRemaining <= 0) {
+                    clearInterval(countdown);
+                    showThanksMessage();
+                }
+
+                timeRemaining--;
+            }, 1000); // Her 1 saniyede bir güncelle
+        }
+
+        // Kullanıcı formunu gönderdiğinde test başlasın
+        userForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Formun gönderimini durdur
+            
+            // Telefon numarası ve rastgele Kişisel ID üret
+            const phoneNumber = phoneInput.value.replace(/\D/g, ''); // Telefon numarasından harfleri çıkar
+            const randomId = generatePersonalId();
+            const fullId = `${phoneNumber}_${randomId}`;
+            personalIdInput.value = fullId; // ID'yi input kutusuna yaz
+
+            // Form bilgilerini test sonu formuna aktaralım
+            formNameInput.value = document.getElementById('name').value;
+
+            // Form gönderildi uyarısı göster
+            formSubmittedMessage.classList.remove('hidden');
+
+            // Eğer WhatsApp grup adı alanı boş bırakıldıysa, özel mesaj göster
+            if (whatsappInput.value.trim() === "") {
+                alertMessage.classList.remove('hidden');
+            }
+
+            // Formu gizle, test iframe'ini ve sonucu göster
+            setTimeout(function() {
+                formContainer.classList.add('hidden');
+                testContainer.classList.remove('hidden');
+                instruction.classList.remove('hidden'); // Yeşil mesajı göster
+
+                // Üst bilgiyi küçült ve yan yana diz
+                header.classList.add('small');
+                header.innerHTML = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH9d9Ib6rbgzHkNztQ4lQaEqKkxcpNW7yZfA&s" alt="Kitap Simgesi">' + 
+                    '<p>AYDA Ankara Yabancı Dil Akademisi | Telefon: +90 (312) 123 45 67 | E-posta: info@aydaakademi.com</p>';
+
+                // Geri sayımı başlat (50 dakika)
+                startCountdown(50 * 60); // 50 dakikayı saniyeye çevirdim
+
+                // Kişisel ID ve sonuç formunu hemen göster
+                showResultSection();
+            }, 2000); // 2 saniye sonra formu gizle ve teste başla
+        });
+
+        // Sonuç ve Kişisel ID göster
+        function showResultSection() {
+            resultSection.classList.remove('hidden');
+        }
+
+        // Test süresi bitince "Teşekkürler" mesajını gösterelim
+        function showThanksMessage() {
+            document.getElementById('thanksMessage').classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
