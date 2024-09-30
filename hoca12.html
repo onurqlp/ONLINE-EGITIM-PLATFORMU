@@ -54,11 +54,12 @@
             cursor: pointer;
             text-decoration: none;
             text-align: center;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .portal-container .button:hover {
             background-color: #45a049;
+            transform: translateY(-3px);
         }
 
         /* Sabit Geri Dönüş Butonları (Ayda Hızlandırması) */
@@ -82,11 +83,12 @@
             cursor: pointer;
             text-decoration: none;
             text-align: center;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .fixed-buttons a:hover {
             background-color: #144682; /* Hover'da daha koyu mavi */
+            transform: translateY(-3px);
         }
 
         /* Mobil Uyumlu Tasarım */
@@ -143,8 +145,7 @@
     <div class="fixed-buttons">
     <a href="index.html" class="navigation-button">Ana Sayfa</a>
     <a href="javascript:history.back()" class="navigation-button">Önceki Sayfa</a>
-</div>
-
+    </div>
 
 </body>
 </html>
