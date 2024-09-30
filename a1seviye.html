@@ -46,7 +46,7 @@
         }
 
         .container {
-            max-width: 1400px; /* Daha geniş ekran desteği için genişlik artırıldı */
+            max-width: 1400px;
             margin: 0 auto;
             padding: 10px;
         }
@@ -105,7 +105,7 @@
         #timer {
             font-size: 1.5em;
             color: red;
-            margin-top: 5px; /* Boşluklar azaltıldı */
+            margin-top: 5px;
         }
 
         footer {
@@ -162,12 +162,11 @@
         }
 
         /* Medya Sorguları */
-        /* Tabletler için */
         @media only screen and (max-width: 1024px) {
             iframe {
-                width: 100%; /* Tablet ekranlarında genişlik %100 */
-                height: 700px; /* Yükseklik ayarlandı */
-                margin-left: 0; /* Sola kaydırma kaldırıldı */
+                width: 100%;
+                height: 700px;
+                margin-left: 0;
             }
 
             .fixed-buttons a {
@@ -176,12 +175,11 @@
             }
         }
 
-        /* Telefonlar için */
         @media only screen and (max-width: 768px) {
             iframe {
-                width: 100%; /* Telefon ekranlarında genişlik %100 */
-                height: 500px; /* Yükseklik daha da küçültüldü */
-                margin-left: 0; /* Sola kaydırma kaldırıldı */
+                width: 100%;
+                height: 500px;
+                margin-left: 0;
             }
 
             .fixed-buttons a {
@@ -190,7 +188,7 @@
             }
 
             .fixed-buttons {
-                right: 5px; /* Mobilde butonlar biraz daha içeri alınır */
+                right: 5px;
             }
         }
     </style>
@@ -203,6 +201,13 @@
         <p>Telefon: +90 (312) 123 45 67</p>
         <p>E-posta: info@aydaakademi.com</p>
     </header>
+
+    <!-- Yeni Başlık ve Açıklama -->
+    <div class="container">
+        <h2>Almanca A1 Seviye Belirleme Sınavı</h2>
+        <p>Bu sınav yaklaşık 50 dakika sürecektir ve Almanca dil seviyenizi belirlemek için tasarlanmıştır.</p>
+        <p>Sınav sonunda seviyenize göre uygun kurslar önerilecektir.</p>
+    </div>
 
     <!-- Bilgi Formu -->
     <div class="container" id="form-container">
@@ -250,7 +255,6 @@
             </form>
         </div>
 
-        <!-- Eğer opsiyonel alan doldurulmadıysa mesaj göster -->
         <div id="alert-message" class="alert-message hidden">
             Lütfen adınıza oluşturulmuş bu Kişisel ID'yi bize gönderin ve indirim ile detaylı bilgilendirme alın.
         </div>
@@ -287,7 +291,6 @@
         let generatedPersonalId = '';
         let countdown;
 
-        // Rastgele Kişisel ID üretimi
         function generatePersonalId() {
             const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
             let id = '';
@@ -297,75 +300,60 @@
             return id;
         }
 
-        // Geri sayım başlatma fonksiyonu
         function startCountdown(duration) {
             let timeRemaining = duration; // 50 dakika = 3000 saniye
             countdown = setInterval(function () {
                 let minutes = Math.floor(timeRemaining / 60);
                 let seconds = timeRemaining % 60;
 
-                // Tek haneli saniyeleri 0 ile doldur
                 seconds = seconds < 10 ? '0' + seconds : seconds;
 
-                // Geri sayım metnini güncelle
                 timerElement.textContent = `${minutes}:${seconds}`;
 
-                // Zaman dolduğunda geri sayımı durdur
                 if (timeRemaining <= 0) {
                     clearInterval(countdown);
                     showThanksMessage();
                 }
 
                 timeRemaining--;
-            }, 1000); // Her 1 saniyede bir güncelle
+            }, 1000);
         }
 
-        // Kullanıcı formunu gönderdiğinde test başlasın
         userForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Formun gönderimini durdur
-            
-            // Telefon numarası ve rastgele Kişisel ID üret
-            const phoneNumber = phoneInput.value.replace(/\D/g, ''); // Telefon numarasından harfleri çıkar
+            event.preventDefault();
+
+            const phoneNumber = phoneInput.value.replace(/\D/g, '');
             const randomId = generatePersonalId();
             const fullId = `${phoneNumber}_${randomId}`;
-            personalIdInput.value = fullId; // ID'yi input kutusuna yaz
+            personalIdInput.value = fullId;
 
-            // Form bilgilerini test sonu formuna aktaralım
             formNameInput.value = document.getElementById('name').value;
 
-            // Form gönderildi uyarısı göster
             formSubmittedMessage.classList.remove('hidden');
 
-            // Eğer WhatsApp grup adı alanı boş bırakıldıysa, özel mesaj göster
             if (whatsappInput.value.trim() === "") {
                 alertMessage.classList.remove('hidden');
             }
 
-            // Formu gizle, test iframe'ini ve sonucu göster
             setTimeout(function() {
                 formContainer.classList.add('hidden');
                 testContainer.classList.remove('hidden');
-                instruction.classList.remove('hidden'); // Yeşil mesajı göster
+                instruction.classList.remove('hidden');
 
-                // Üst bilgiyi küçült ve yan yana diz
                 header.classList.add('small');
                 header.innerHTML = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH9d9Ib6rbgzHkNztQ4lQaEqKkxcpNW7yZfA&s" alt="Kitap Simgesi">' + 
                     '<p>AYDA Ankara Yabancı Dil Akademisi | Telefon: +90 (312) 123 45 67 | E-posta: info@aydaakademi.com</p>';
 
-                // Geri sayımı başlat (50 dakika)
-                startCountdown(50 * 60); // 50 dakikayı saniyeye çevirdim
+                startCountdown(50 * 60);
 
-                // Kişisel ID ve sonuç formunu hemen göster
                 showResultSection();
-            }, 2000); // 2 saniye sonra formu gizle ve teste başla
+            }, 2000);
         });
 
-        // Sonuç ve Kişisel ID göster
         function showResultSection() {
             resultSection.classList.remove('hidden');
         }
 
-        // Test süresi bitince "Teşekkürler" mesajını gösterelim
         function showThanksMessage() {
             document.getElementById('thanksMessage').classList.remove('hidden');
         }
