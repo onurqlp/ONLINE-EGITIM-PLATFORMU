@@ -3,53 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kelime Etkinlikleri</title>
+    <title>AYDA Ankara Yabancı Dil Akademisi - Kelime Etkinlikleri</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1C3F94; /* Ayda mavi arka plan */
-            color: white;
             margin: 0;
             padding: 0;
+            text-align: center;
+            box-sizing: border-box;
+            background-color: white;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
-            text-align: center;
         }
 
         header {
-            background-color: #2C5282; /* Koyu mavi başlık */
-            padding: 20px;
-            width: 100%;
+            padding: 10px;
+            background-color: #1877F2; /* Üst şerit mavi */
             text-align: center;
+            color: white;
         }
 
-        header h1 {
-            font-size: 2rem;
-            margin: 0;
+        header h1, header h2, header p {
+            margin: 5px 0;
         }
 
-        p {
-            font-size: 1.2rem;
-            margin: 20px 0;
+        header img {
+            width: 30px;
+            vertical-align: middle;
         }
 
-        /* Iframe */
+        header.small {
+            padding: 5px;
+            font-size: 0.8em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header.small p {
+            margin-left: 10px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
         iframe {
             width: 100%;
-            height: 600px;
+            height: 800px;
             border: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        /* Geri dönüş butonları */
+        footer {
+            padding: 5px;
+            background-color: #1877F2;
+            color: white;
+            font-size: 0.7em;
+            margin-top: 10px;
+        }
+
         .fixed-buttons {
             position: fixed;
             top: 50%;
-            right: 10px; 
+            right: 10px;
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
@@ -59,7 +78,7 @@
         .fixed-buttons a {
             padding: 12px 25px;
             font-size: 1rem;
-            background-color: #2C5282; 
+            background-color: #2C5282;
             color: white;
             border: none;
             border-radius: 5px;
@@ -72,24 +91,62 @@
         .fixed-buttons a:hover {
             background-color: #144682;
         }
+
+        @media only screen and (max-width: 1024px) {
+            iframe {
+                height: 700px;
+            }
+
+            .fixed-buttons a {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            iframe {
+                height: 600px;
+            }
+
+            .fixed-buttons a {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+
+            .fixed-buttons {
+                right: 5px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Kelime Etkinlikleri</h1>
+    <header id="page-header">
+        <h1>AYDA <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH9d9Ib6rbgzHkNztQ4lQaEqKkxcpNW7yZfA&s" alt="Kitap Simgesi"></h1>
+        <h2>Ankara Yabancı Dil Akademisi</h2>
+        <p>Telefon: +90 (312) 123 45 67</p>
+        <p>E-posta: info@aydaakademi.com</p>
     </header>
 
-    <p>Kelime bilginizi geliştirebileceğiniz etkinlikler aşağıda listelenmiştir:</p>
+    <div class="container">
+        <h2>Kelime Etkinlikleri</h2>
+        <p>Bu sayfa, kelime dağarcığınızı geliştirmenize yardımcı olacak etkinlikler içerir. Aşağıda ilgili sayfa görüntülenmektedir.</p>
+    </div>
 
-    <!-- Google Drive içeriği iframe ile -->
+    <!-- Kelime Etkinlikleri Iframe -->
     <iframe src="https://der-artikel.de/wortschatz.html"></iframe>
 
-    <!-- Geri dönüş butonları -->
+    <!-- Sabit Geri Dönüş Butonları (Ayda Hızlandırması) -->
     <div class="fixed-buttons">
-        <a href="etkinlikler.html" class="navigation-button">Etkinliklere Geri Dön</a>
         <a href="index.html" class="navigation-button">Ana Sayfa</a>
+        <a href="javascript:history.back()" class="navigation-button">Önceki Sayfa</a>
     </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 AYDA Ankara Yabancı Dil Akademisi. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
