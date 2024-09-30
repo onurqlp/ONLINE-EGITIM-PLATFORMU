@@ -5,31 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Öğretmen Portalı</title>
     <style>
+        /* Genel Sayfa Stili */
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1C3F94; /* Ayda mavi arka plan */
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
         }
+
+        /* Portal Kutusu Stili */
         .portal-container {
             background-color: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .portal-container h1 {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
             text-align: center;
         }
+
+        .portal-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2C5282; /* Koyu mavi başlık */
+        }
+
+        /* Buton Konteyneri */
         .portal-container .button-container {
             display: flex;
             justify-content: space-around;
             margin-top: 30px;
         }
+
+        /* Buton Stili */
         .portal-container .button {
             padding: 15px 30px;
-            font-size: 18px;
+            font-size: 1.1rem;
             background-color: #4CAF50;
             color: white;
             border: none;
@@ -37,10 +53,36 @@
             cursor: pointer;
             text-decoration: none;
             text-align: center;
+            transition: background-color 0.3s ease;
         }
+
         .portal-container .button:hover {
             background-color: #45a049;
         }
+
+        /* Mobil Uyumlu Tasarım */
+        @media (max-width: 768px) {
+            .portal-container h1 {
+                font-size: 2rem;
+            }
+
+            .portal-container .button {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portal-container h1 {
+                font-size: 1.8rem;
+            }
+
+            .portal-container .button {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+        }
+
     </style>
 </head>
 <body>
