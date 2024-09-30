@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYDA Ankara Yabancı Dil Akademisi - Konuşma Pratikleri</title>
+    <style>
+        /* Genel Stiller */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1C3F94;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+
+        /* Başlık Stili */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #2C5282;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Buton Stili */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 50px auto;
+            max-width: 1000px;
+        }
+
+        .level-button {
+            padding: 12px;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .level-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Iframe Stili */
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            margin-top: 20px;
+        }
+
+        /* Sabit Geri Dönüş Butonları */
+        .fixed-buttons {
+            position: fixed;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .fixed-buttons a {
+            padding: 12px 25px;
+            font-size: 1rem;
+            background-color: #2C5282;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .fixed-buttons a:hover {
+            background-color: #144682;
+        }
+
+        /* Altbilgi */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #2C5282;
+            color: white;
+        }
+
+        /* Responsive Stiller */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .level-button {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+
+            iframe {
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .level-button {
+                padding: 8px;
+                font-size: 0.8rem;
+            }
+
+            iframe {
+                height: 400px;
+            }
+
+            .fixed-buttons a {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
+
+            .fixed-buttons {
+                right: 5px;
+            }
+        }
+
+    </style>
+    <script>
+        function loadLevelContent(level) {
+            let iframe = document.getElementById('contentIframe');
+            if (level === 'A1') {
+                iframe.src = 'https://www.dw.com/de/deutsch-lernen/a1/s-36519788'; // A1 Konuşma Pratikleri
+            } else if (level === 'A2') {
+                iframe.src = 'https://www.dw.com/de/deutsch-lernen/a2/s-36519789'; // A2 Konuşma Pratikleri
+            } else if (level === 'B1') {
+                iframe.src = 'https://www.dw.com/de/deutsch-lernen/b1/s-36519790'; // B1 Konuşma Pratikleri
+            } else if (level === 'B2') {
+                iframe.src = 'https://www.dw.com/de/deutsch-lernen/b2/s-36519791'; // B2 Konuşma Pratikleri
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Konuşma Pratikleri</h1>
+        <p>Almanca konuşma pratiği yapmak için seviyenizi seçin:</p>
+    </header>
+
+    <!-- Seviye Butonları -->
+    <div class="button-container">
+        <button class="level-button" onclick="loadLevelContent('A1')">A1</button>
+        <button class="level-button" onclick="loadLevelContent('A2')">A2</button>
+        <button class="level-button" onclick="loadLevelContent('B1')">B1</button>
+        <button class="level-button" onclick="loadLevelContent('B2')">B2</button>
+    </div>
+
+    <!-- İçerik Gösterimi için Iframe -->
+    <iframe id="contentIframe" src="" title="Konuşma Pratikleri"></iframe>
+
+    <!-- Sabit Geri Dönüş Butonları (Ayda Hızlandırması) -->
+    <div class="fixed-buttons">
+        <a href="index.html" class="navigation-button">Ana Sayfa</a>
+        <a href="javascript:history.back()" class="navigation-button">Önceki Sayfa</a>
+    </div>
+
+    <!-- Altbilgi -->
+    <footer>
+        <p>&copy; 2024 AYDA Ankara Yabancı Dil Akademisi. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+</body>
+</html>
