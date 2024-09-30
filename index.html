@@ -52,10 +52,13 @@
         }
 
         nav ul li a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             color: white;
             text-decoration: none;
             font-size: 1.2rem;
-            padding: 10px 20px;
+            padding: 10px;
             border: 2px solid white;
             border-radius: 5px;
             transition: background-color 0.3s ease;
@@ -63,6 +66,24 @@
 
         nav ul li a:hover {
             background-color: #144682;
+        }
+
+        /* Etkinlikler butonuna dikkat çekmek için ters renk */
+        nav ul li a#highlighted {
+            background-color: #FFA500; /* Turuncu renk */
+            color: black;
+            border-color: #FFA500;
+        }
+
+        nav ul li a#highlighted:hover {
+            background-color: #ff7800; /* Daha koyu turuncu */
+            color: white;
+        }
+
+        /* Simge boyutları */
+        nav ul li a img {
+            width: 30px;
+            margin-bottom: 5px;
         }
 
         .dictionary-section {
@@ -185,12 +206,12 @@
 
     <nav>
         <ul>
-            <li><a href="ders.html">Ders Materyalleri</a></li>
-            <li><a href="kütüphane.html">Dijital Kütüphane</a></li>
-            <li><a href="seviye.html">Seviye Belirleme</a></li>
-            <li><a href="sınav.html">Sınav Hazırlık Materyalleri</a></li>
-            <li><a href="hoca1.html">Öğretmen Portalı</a></li>
-            <li><a href="etkinlikler.html">Dil Öğrenme Etkinlikleri</a></li> <!-- Yeni eklenen etkinlikler butonu -->
+            <li><a href="ders.html"><img src="https://img.icons8.com/ios-filled/50/000000/books.png" alt="Ders Materyalleri">Ders Materyalleri</a></li>
+            <li><a href="kütüphane.html"><img src="https://img.icons8.com/ios-filled/50/000000/open-book.png" alt="Dijital Kütüphane">Kütüphane</a></li>
+            <li><a href="seviye.html"><img src="https://img.icons8.com/ios-filled/50/000000/test-passed.png" alt="Seviye Belirleme">Seviye Belirleme</a></li>
+            <li><a href="sınav.html"><img src="https://img.icons8.com/ios-filled/50/000000/exam.png" alt="Sınav Hazırlık">Sınav Hazırlık</a></li>
+            <li><a href="hoca1.html"><img src="https://img.icons8.com/ios-filled/50/000000/teacher.png" alt="Öğretmen Portalı">Öğretmen Portalı</a></li>
+            <li><a href="etkinlikler.html" id="highlighted"><img src="https://img.icons8.com/ios-filled/50/000000/activity-grid-2.png" alt="Etkinlikler">Dil Öğrenme Etkinlikleri</a></li>
         </ul>
     </nav>
 
