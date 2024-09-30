@@ -47,6 +47,9 @@
 
         /* Etkinlik Buton Stili */
         .activity-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 20px;
             font-size: 1.2rem;
             background-color: #4CAF50;
@@ -58,6 +61,11 @@
             text-align: center;
             transition: background-color 0.3s ease;
             width: 220px;
+        }
+
+        .activity-button img {
+            width: 40px;
+            margin-bottom: 10px;
         }
 
         .activity-button:hover {
@@ -116,16 +124,46 @@
     </header>
 
     <div class="button-container">
-        <a href="podcastler.html" class="activity-button">Podcastler</a>
-        <a href="testler.html" class="activity-button">Dil Bilgisi Testleri</a>
-        <a href="kelime_etkinlikleri.html" class="activity-button">Kelime Alıştırmaları</a>
-        <a href="okuma_metinleri.html" class="activity-button">Okuma Metinleri</a>
-        <a href="konusma_pratikleri.html" class="activity-button">Konuşma Pratikleri</a>
-        <a href="videolar.html" class="activity-button">Video İzleme</a>
-        <a href="yazma_calisma.html" class="activity-button">Yazma Çalışmaları</a>
-        <a href="quizler.html" class="activity-button">Quizler</a>
-        <a href="dil_degisim.html" class="activity-button">Dil Değişim Programları</a>
-        <a href="dinleme_etkinlikleri.html" class="activity-button">Dinleme Alıştırmaları</a>
+        <a href="podcastler.html" class="activity-button">
+            <img src="https://img.icons8.com/ios-filled/50/000000/podcast.png" alt="Podcastler">
+            Podcastler
+        </a>
+        <a href="testler.html" class="activity-button">
+            <img src="https://img.icons8.com/ios-filled/50/000000/test-passed.png" alt="Dil Bilgisi Testleri">
+            Dil Bilgisi Testleri
+        </a>
+        <a href="kelime_etkinlikleri.html" class="activity-button">
+            <img src="https://img.icons8.com/ios-filled/50/000000/alphabetical-sorting.png" alt="Kelime Alıştırmaları">
+            Kelime Alıştırmaları
+        </a>
+        <a href="okuma_metinleri.html" class="activity-button">
+            <img src="https://img.icons8.com/ios-filled/50/000000/open-book.png" alt="Okuma Metinleri">
+            Okuma Metinleri
+        </a>
+        <a href="konusma_pratikleri.html" class="activity-button">
+            <img src="https://img.icons8.com/ios-filled/50/000000/conference.png" alt="Konuşma Pratikleri">
+            Konuşma Pratikleri
+        </a>
+        <a href="videolar.html" class="activity-button">
+            <img src="https://img.icons8.com/ios-filled/50/000000/video.png" alt="Video İzleme">
+            Video İzleme
+        </a>
+        <a href="yazma_calisma.html" class="activity-button">
+            <img src="https://img.icons8.com/ios-filled/50/000000/edit.png" alt="Yazma Çalışmaları">
+            Yazma Çalışmaları
+        </a>
+        <a href="quizler.html" class="activity-button">
+            <img src="https://img.icons8.com/ios-filled/50/000000/question-mark.png" alt="Quizler">
+            Quizler
+        </a>
+        <a href="dil_degisim.html" class="activity-button">
+            <img src="https://img.icons8.com/ios-filled/50/000000/language.png" alt="Dil Değişim Programları">
+            Dil Değişim Programları
+        </a>
+        <a href="dinleme_etkinlikleri.html" class="activity-button">
+            <img src="https://img.icons8.com/ios-filled/50/000000/ear.png" alt="Dinleme Alıştırmaları">
+            Dinleme Alıştırmaları
+        </a>
     </div>
 
     <!-- Sabit Geri Dönüş Butonları (Ayda Hızlandırması) -->
