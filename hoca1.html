@@ -5,53 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Öğretmen Portalı Giriş</title>
     <style>
+        /* Genel Sayfa Stili */
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1C3F94; /* Ayda mavi arka plan */
+            color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
         }
+
+        /* Giriş Kutusu Stili */
         .login-container {
             background-color: white;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
         }
+
         .login-container h1 {
             text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #2C5282; /* Koyu mavi başlık */
         }
+
         .login-container input {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
+            border-radius: 5px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            font-size: 1rem;
         }
+
         .login-container button {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background-color: #4CAF50;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 1.1rem;
+            margin-top: 10px;
         }
+
         .login-container button:hover {
             background-color: #45a049;
+        }
+
+        /* Mobil Uyumlu Tasarım */
+        @media (max-width: 768px) {
+            .login-container h1 {
+                font-size: 1.8rem;
+            }
+
+            .login-container input, .login-container button {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .login-container h1 {
+                font-size: 1.5rem;
+            }
+
+            .login-container input, .login-container button {
+                font-size: 0.9rem;
+            }
         }
     </style>
     <script>
         function login() {
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-
-            if (username === 'esra' && password === 'esrahoca') {
-                window.location.href = 'hoca12.html';
-            } else {
-                alert('Kullanıcı adı veya şifre hatalı!');
-            }
+            // Şifre ne girilirse girilsin giriş yapacak
+            window.location.href = 'hoca12.html'; // Her durumda giriş yap
         }
     </script>
 </head>
