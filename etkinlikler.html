@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dil Öğrenme Etkinlikleri</title>
+    <style>
+        /* Genel Sayfa Stili */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1C3F94; /* Ayda mavi arka plan */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: space-between;
+        }
+
+        /* Başlık ve Alt Başlık */
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #2C5282; /* Koyu mavi başlık */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Buton Konteyneri */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 50px auto;
+            max-width: 1000px;
+        }
+
+        /* Etkinlik Buton Stili */
+        .activity-button {
+            padding: 20px;
+            font-size: 1.2rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            width: 220px;
+        }
+
+        .activity-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Sabit Geri Dönüş Butonları (Ayda Hızlandırması) */
+        .fixed-buttons {
+            position: fixed;
+            top: 50%;
+            right: 10px; /* Sağda sabit */
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .fixed-buttons a {
+            padding: 12px 25px;
+            font-size: 1rem;
+            background-color: #2C5282; /* Koyu mavi butonlar */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .fixed-buttons a:hover {
+            background-color: #144682; /* Hover'da daha koyu mavi */
+        }
+
+        /* Altbilgi */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #2C5282;
+            color: white;
+            font-size: 1rem;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Dil Öğrenme Etkinlikleri</h1>
+        <p> Almanca öğrenirken faydalı olabilecek etkinlikler</p>
+    </header>
+
+    <div class="button-container">
+        <a href="#" class="activity-button">Podcastler</a>
+        <a href="#" class="activity-button">Dil Bilgisi Testleri</a>
+        <a href="#" class="activity-button">Kelime Alıştırmaları</a>
+        <a href="#" class="activity-button">Okuma Metinleri</a>
+        <a href="#" class="activity-button">Konuşma Pratikleri</a>
+        <a href="#" class="activity-button">Video İzleme</a>
+        <a href="#" class="activity-button">Yazma Çalışmaları</a>
+        <a href="#" class="activity-button">Quizler</a>
+        <a href="#" class="activity-button">Dil Değişim Programları</a>
+        <a href="#" class="activity-button">Dinleme Alıştırmaları</a>
+    </div>
+
+    <!-- Sabit Geri Dönüş Butonları (Ayda Hızlandırması) -->
+    <div class="fixed-buttons">
+        <a href="index.html" class="navigation-button">Ana Sayfa</a>
+        <a href="javascript:history.back()" class="navigation-button">Önceki Sayfa</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 AYDA Ankara Yabancı Dil Akademisi. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+</body>
+</html>
