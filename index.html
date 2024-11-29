@@ -7,36 +7,31 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #1C3F94; /* Daha koyu mavi */
+            background-color: #364b89; /* Canva rengi kullanıldı */
             color: white;
             margin: 0;
             padding: 0;
         }
-
         header {
             text-align: center;
             padding: 50px 0;
             background-color: #2C5282; /* Koyu mavi */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
         header h1 {
             font-size: 4rem; /* "AYDA" için büyük yazı */
             font-weight: bold; /* Kalın yazı */
             margin-bottom: 10px;
         }
-
         header p {
             font-size: 1.5rem; /* Altındaki yazı bir tık daha küçük */
             font-weight: bold; /* Kalın yazı */
         }
-
         .logo {
-            width: 100px;
+            width: 150px; /* Logo boyutu büyütüldü */
             height: auto;
             margin: 0 auto;
         }
-
         nav ul {
             list-style: none;
             padding: 0;
@@ -46,11 +41,9 @@
             justify-content: center;
             flex-wrap: wrap; /* Menü elemanlarının ekrana sığması için */
         }
-
         nav ul li {
             margin: 10px; /* Aralarındaki mesafeyi dinamik yap */
         }
-
         nav ul li a {
             display: flex;
             flex-direction: column;
@@ -63,46 +56,38 @@
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
-
         nav ul li a:hover {
             background-color: #144682;
         }
-
         /* Etkinlikler butonuna dikkat çekmek için ters renk */
         nav ul li a#highlighted {
             background-color: #FFA500; /* Turuncu renk */
             color: black;
             border-color: #FFA500;
         }
-
         nav ul li a#highlighted:hover {
             background-color: #ff7800; /* Daha koyu turuncu */
             color: white;
         }
-
         /* Simge boyutları */
         nav ul li a img {
             width: 30px;
             margin-bottom: 5px;
         }
-
         .dictionary-section {
             text-align: center;
             margin: 50px 0;
         }
-
         .dictionary-section h2 {
             font-size: 1.5rem;
             margin-bottom: 20px;
         }
-
         .dictionary-container {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap; /* Sözlük butonlarının ekrana sığması için */
         }
-
         .dictionary-container a {
             text-decoration: none;
             color: white;
@@ -110,11 +95,9 @@
             padding: 5px;
             transition: color 0.3s ease;
         }
-
         .dictionary-container a:hover {
             color: #a8d0e6;
         }
-
         .social-icons {
             position: fixed;
             top: 50%;
@@ -124,7 +107,6 @@
             flex-direction: column;
             gap: 10px;
         }
-
         .social-icons a {
             display: block;
             width: 40px;
@@ -136,74 +118,59 @@
             justify-content: center;
             transition: transform 0.3s ease;
         }
-
         .social-icons a:hover {
             transform: scale(1.1);
         }
-
         .social-icons img {
             width: 25px;
         }
-
         footer {
             background-color: #2C5282;
             text-align: center;
             padding: 20px 0;
             margin-top: 50px;
         }
-
         footer p {
             margin: 0;
         }
-
         @media (max-width: 768px) {
             header h1 {
                 font-size: 3rem; /* Mobilde başlığı küçült */
             }
-
             nav ul li a {
                 font-size: 1rem; /* Butonları küçült */
             }
-
             .social-icons a {
                 width: 35px; /* İkonları mobilde küçült */
                 height: 35px;
             }
-
             .social-icons img {
                 width: 20px; /* İkon boyutunu küçült */
             }
         }
-
         @media (max-width: 480px) {
             header h1 {
                 font-size: 2.5rem; /* Daha küçük ekranlar için başlık küçültüldü */
             }
-
             nav ul li a {
                 font-size: 0.9rem; /* Butonları biraz daha küçült */
             }
-
             .social-icons a {
                 width: 30px;
                 height: 30px;
             }
-
             .social-icons img {
                 width: 18px;
             }
         }
-
     </style>
 </head>
 <body>
-
     <header>
         <h1>AYDA</h1> <!-- Büyük, kalın başlık -->
         <p>Ankara Yabancı Dil Akademisi Online Eğitim Platformuna Hoşgeldiniz!</p> <!-- Biraz küçük ve kalın -->
-        <img src="mavi_kitap_logo.png" alt="Site Logosu" class="logo"> <!-- Mavi kitap logosu -->
+        <img src="https://www.aydadil.com/wp-content/uploads/2024/03/aydankdilwhite-1.png" alt="Site Logosu" class="logo"> <!-- Yeni logo kullanıldı -->
     </header>
-
     <nav>
         <ul>
             <li><a href="ders.html"><img src="https://img.icons8.com/ios-filled/50/000000/books.png" alt="Ders Materyalleri">Ders Materyalleri</a></li>
@@ -214,7 +181,6 @@
             <li><a href="etkinlikler.html" id="highlighted"><img src="https://img.icons8.com/ios-filled/50/000000/activity-grid-2.png" alt="Etkinlikler">Dil Öğrenme Etkinlikleri</a></li>
         </ul>
     </nav>
-
     <div class="dictionary-section">
         <h2>Sözlükler</h2>
         <div class="dictionary-container">
@@ -223,7 +189,6 @@
             <a href="https://tr.pons.com" target="_blank">PONS</a>
         </div>
     </div>
-
     <!-- Sosyal medya ikonları -->
     <div class="social-icons">
         <a href="https://wa.me/1234567890" target="_blank">
@@ -236,10 +201,8 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Globe_icon.svg" alt="Website">
         </a>
     </div>
-
     <footer>
         <p>&copy; 2024 AYDA Ankara Yabancı Dil Akademisi. Tüm Hakları Saklıdır.</p>
     </footer>
-
 </body>
 </html>
